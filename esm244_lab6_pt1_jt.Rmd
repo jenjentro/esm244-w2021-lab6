@@ -1,0 +1,25 @@
+---
+title: "Lab 6"
+author: "Jennifer Truong"
+date: "2/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(here)
+library(janitor)
+library(sf)
+library(tmap)
+library(gstat)
+library(stars)
+```
+
+```{r}
+ca_dgw <- read_sf(here("ca_dgw"), 
+                  layer = "F2013_DBGS_Points_20150720_093252") %>% 
+  clean_names()
+```
+
