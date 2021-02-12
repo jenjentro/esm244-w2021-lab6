@@ -21,5 +21,12 @@ library(stars)
 ca_dgw <- read_sf(here("ca_dgw"), 
                   layer = "F2013_DBGS_Points_20150720_093252") %>% 
   clean_names()
+
+st_crs(ca_dgw)
+
+ca_counties <- read_sf(here("ca_counties"),
+                       layer = "CA_Counties_TIGER2016") %>% 
+  clean_names() %>% 
+  select(name)
 ```
 
